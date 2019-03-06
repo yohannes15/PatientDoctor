@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Continue Signing up your patients below</h1>
+    <form action="signup" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.treatmentname.label }}<br>
+            {{ form.treatmentname(size=32) }}<br>
+            {% for error in form.treatmentname.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.treatmentnotes.label }}<br>
+            {{ form.treatmentnotes(size=64) }}<br>
+            {% for error in form.treatmentnotes.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.treatmentdate.label }}<br>
+            {{ form.treatmentdate(size=32) }}<br>
+            {% for error in form.treatmentdate.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.treatmentprice.label }}<br>
+            {{ form.treatmentprice(size=64) }}<br>
+            {% for error in form.treatmentprice.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="content-section">
+  <div class="media">
+    <div class="media-body">
+      <h2 class="account-heading">{{current_user.username}}</h2>
+      <p class="text-secondary">{{current_user.email}}</p>
+    </div>
+  </div>
+  <!-- FORM HERE -->
+</div>
+
+<h4>List of current patients</h4>
+{% for patient in patients %}
+    <ul><div class="media-body">
+            <h2>{{ patient.firstname }}  {{ patient.lastname}}</h2>
+            <p class="article-content">{{ patient.dateofbirth }}</p>
+        </div>
+    </ul>
+{% endfor %}
+
+{% for treatment in treatments %}
+    <ul><div class="media-body">
+        <h4>{{ treatment.treatmentname }}  {{ treatment.treatmentdate}}<h4>
+        <p class="article-content">{{ treatment.treatmentnotes }}</p>
+        <p class="article-content">{{ treatment.treatmentprice }}</p>
+      </div>
+    </ul>
+{% endfor %}
+{% endblock content %}

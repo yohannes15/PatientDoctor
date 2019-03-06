@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        <h1>Hello, {{ current_user.username }}!</h1>
+        <div><p>Click <a href="/signup">to add patients</a></p>
+        <p>Click Here to <a href="/account">Access List of Your Patients</a></p>
+
+{% endblock %}
